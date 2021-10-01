@@ -852,6 +852,11 @@ class AudioService {
   /// The cache to use when loading artwork.
   /// Defaults to [DefaultCacheManager].
   static BaseCacheManager get cacheManager => _cacheManager!;
+
+  static set cacheManager(BaseCacheManager value) {
+    _cacheManager = value;
+  }
+
   static BaseCacheManager? _cacheManager;
 
   static late AudioServiceConfig _config;
