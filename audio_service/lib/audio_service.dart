@@ -853,7 +853,7 @@ class AudioService {
   /// Defaults to [DefaultCacheManager].
   static BaseCacheManager get cacheManager => _cacheManager!;
 
-  static set cacheManager(BaseCacheManager value) {
+  static set cacheManager(BaseCacheManager? value) {
     _cacheManager = value;
   }
 
