@@ -11,4 +11,15 @@ public class AudioServiceActivity extends FlutterActivity {
     public FlutterEngine provideFlutterEngine(Context context) {
         return AudioServicePlugin.getFlutterEngine(context);
     }
+
+    @Override
+    protected String getCachedEngineId() {
+        AudioServicePlugin.getFlutterEngine(this);
+        return AudioServicePlugin.getFlutterEngineId();
+    }
+
+    @Override
+    public boolean shouldDestroyEngineWithHost() {
+        return false;
+    }
 }
