@@ -66,25 +66,22 @@ public class AudioServicePlugin implements FlutterPlugin, ActivityAware {
         return flutterEngineId;
     }
     public static synchronized FlutterEngine getFlutterEngine(Context context) {
+        System.out.println("test 1");
         FlutterEngine flutterEngine = FlutterEngineCache.getInstance().get(flutterEngineId);
+        System.out.println("test 2");
         if (flutterEngine == null) {
+            System.out.println("test 3");
             // XXX: The constructor triggers onAttachedToEngine so this variable doesn't help us.
             // Maybe need a boolean flag to tell us we're currently loading the main flutter engine.
             flutterEngine = new FlutterEngine(context.getApplicationContext());
-            if (context instanceof FlutterActivity && ((FlutterActivity)context).shouldHandleDeeplinking()) {
-                // initial route must be set before dart entrypoint is executed
-                FlutterActivity flutterActivity = (FlutterActivity)context;
-                String path = flutterActivity.getInitialRoute();
-                if (path == null) {
-                    path = maybeGetInitialRouteFromIntent(flutterActivity.getIntent());
-                }
-                if (path != null) {
-                    flutterEngine.getNavigationChannel().setInitialRoute(path);
-                }
-            }
+            System.out.println("test 4");
+          
             flutterEngine.getDartExecutor().executeDartEntrypoint(DartExecutor.DartEntrypoint.createDefault());
+            System.out.println("test 5");
             FlutterEngineCache.getInstance().put(flutterEngineId, flutterEngine);
+            System.out.println("test 6");
         }
+        System.out.println("test 7");
         return flutterEngine;
     }
 
