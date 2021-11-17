@@ -75,7 +75,7 @@ public class AudioServicePlugin implements FlutterPlugin, ActivityAware {
             flutterEngine = new FlutterEngine(context.getApplicationContext());
             flutterEngine.getDartExecutor().executeDartEntrypoint(DartExecutor.DartEntrypoint.createDefault());    
             FlutterEngineCache.getInstance().put(flutterEngineId, flutterEngine);
-        // }
+        }
         return flutterEngine;
     }
 
