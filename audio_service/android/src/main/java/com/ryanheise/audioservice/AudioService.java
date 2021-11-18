@@ -35,7 +35,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import io.flutter.embedding.engine.FlutterEngine;
+// import io.flutter.embedding.engine.FlutterEngine;
 import android.net.Uri;
 
 public class AudioService extends MediaBrowserServiceCompat {
@@ -201,7 +201,7 @@ public class AudioService extends MediaBrowserServiceCompat {
         return inSampleSize;
     }
 
-    private FlutterEngine flutterEngine;
+    // private FlutterEngine flutterEngine;
     private AudioServiceConfig config;
     private PowerManager.WakeLock wakeLock;
     private MediaSessionCompat mediaSession;
@@ -275,7 +275,7 @@ public class AudioService extends MediaBrowserServiceCompat {
             }
         };
 
-        flutterEngine = AudioServicePlugin.getFlutterEngine(this);
+        // flutterEngine = AudioServicePlugin.getFlutterEngine(this);
         System.out.println("flutterEngine warmed up");
     }
 
