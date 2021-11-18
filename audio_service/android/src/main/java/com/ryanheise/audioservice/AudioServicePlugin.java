@@ -82,7 +82,7 @@ public class AudioServicePlugin implements FlutterPlugin, ActivityAware {
     public static void disposeFlutterEngine() {
         FlutterEngine flutterEngine = FlutterEngineCache.getInstance().get(flutterEngineId);
         if (flutterEngine != null) {
-            flutterEngine.platformViewsController.detachFromView();
+            flutterEngine.getPlatformViewsController().detachFromView();
             flutterEngine.destroy();
             FlutterEngineCache.getInstance().remove(flutterEngineId);
         }
