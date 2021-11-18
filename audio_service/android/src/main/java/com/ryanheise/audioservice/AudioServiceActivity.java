@@ -7,8 +7,8 @@ import io.flutter.embedding.engine.FlutterEngineCache;
 import io.flutter.embedding.engine.dart.DartExecutor;
 
 public class AudioServiceActivity extends FlutterActivity {
-    // @Override
-    // public FlutterEngine provideFlutterEngine(Context context) {
-    //     return AudioServicePlugin.getFlutterEngine(context);
-    // }
+    @Override
+    public FlutterEngine provideFlutterEngine(Context context) {
+        return AudioServicePlugin.getFlutterEngine(context);
+    }
 }
