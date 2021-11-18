@@ -66,15 +66,19 @@ public class AudioServicePlugin implements FlutterPlugin, ActivityAware {
         return flutterEngineId;
     }
     public static synchronized FlutterEngine getFlutterEngine(Context context) {
-     
+        System.out.println("engine 1");
         FlutterEngine flutterEngine = FlutterEngineCache.getInstance().get(flutterEngineId);
-    
+        System.out.println("engine 2");
         if (flutterEngine == null) {
+            System.out.println("engine 3");
             // XXX: The constructor triggers onAttachedToEngine so this variable doesn't help us.
             // Maybe need a boolean flag to tell us we're currently loading the main flutter engine.
             flutterEngine = new FlutterEngine(context.getApplicationContext());
+            System.out.println("engine 4");
             flutterEngine.getDartExecutor().executeDartEntrypoint(DartExecutor.DartEntrypoint.createDefault());    
+            System.out.println("engine 5");
             FlutterEngineCache.getInstance().put(flutterEngineId, flutterEngine);
+            System.out.println("engine 6");
         }
         return flutterEngine;
     }
